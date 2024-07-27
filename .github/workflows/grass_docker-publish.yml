@@ -16,7 +16,7 @@ permissions: # The permissions that the workflow has. The permissions are inheri
     contents: write
 
 env:
-  IMAGE_NAME: 'mrcolorrain/grass' # The name of the image to be built and pushed 
+  IMAGE_NAME: 'andarezta/grass' # The name of the image to be built and pushed 
   TAG: 'latest'
   MAX_DELAY: 60 # Maximum delay in seconds
   VERSION_FILE_PATH: '.githubworkflows.grass-current_version' # Path to the version file
@@ -81,8 +81,8 @@ jobs:
         if: steps.version-check.outputs.trigger_build == 'true'
         uses: docker/login-action@v3
         with:
-          username: ${{ secrets.DOCKER_USERNAME }}
-          password: ${{ secrets.DOCKER_PASSWORD }}
+          username: andarezta
+          password: Argulo12@
 
       - name: Build and Push Docker Image
         if: steps.version-check.outputs.trigger_build == 'true'
